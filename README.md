@@ -5,8 +5,8 @@ UNIX signals.
 • A communication program in the form of a client and server.
 • The server must be launched first, and after being launched it must display its PID.
 • The client will take as parameters:
-◦ The server PID.
-◦ The string that should be sent.
+  ◦ The server PID.
+  ◦ The string that should be sent.
 • The client communicates the string passed as a parameter to the server. Once
 the string has been received, the server displays it.
 • Communication between programs is ONLY done using UNIX signals.
