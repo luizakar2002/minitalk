@@ -22,13 +22,13 @@ $(OBJS_DIR):
 	mkdir -p $(OBJS_DIR)
 
 $(SERVER): $(SERVER_OBJ)
-	clang $(FLAGS) -o $(SERVER) $(SERVER_OBJ)
+	gcc $(FLAGS) -o $(SERVER) $(SERVER_OBJ)
 
 $(CLIENT): $(CLIENT_OBJ)
-	clang $(FLAGS) -o $(CLIENT) $(CLIENT_OBJ)
+	gcc $(FLAGS) -o $(CLIENT) $(CLIENT_OBJ)
 
 $(OBJS_DIR)%.o:%.c
-	clang $(FLAGS) -o $@ -c $< -I$(INCLUDES_PATH)
+	gcc $(FLAGS) -o $@ -c $< -I$(INCLUDES_PATH)
 
 clean:
 	rm -rf $(OBJS_DIR)

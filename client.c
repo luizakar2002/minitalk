@@ -40,7 +40,7 @@ int		main(int argc, char **argv)
 {
 	if (argc != 3)
 	{
-		write(1, "./minitalk <pid> <str>\n", 23);
+		write(1, "./client <pid> <str>\n", 23);
 		return (0);
 	}
 	handle_str(argv[1], argv[2]);

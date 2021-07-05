@@ -2,7 +2,6 @@
 # define MINITALK_H
 #include <signal.h>
 #include <unistd.h>
-#include <stdio.h>
 #include <stdlib.h>
 
 typedef struct s_data
@@ -16,5 +15,6 @@ typedef struct s_data
 int		ft_strlen(char *str);
 int		ft_atoi(const char *str);
 char	*add_char(char *str, unsigned int byte);
+char	*ft_itoa(int n);
 
 #endif

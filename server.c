@@ -1,6 +1,6 @@
 #include "minitalk.h"
 
-static t_data data;
+static			t_data data;
 
 static	void	handle_signal(int sig)
 {
@@ -24,18 +24,28 @@ static	void	handle_signal(int sig)
 
 int		main(void)
 {
-	printf("My PID: %d\n", getpid());
+	char			*pid;
+
+	pid = ft_itoa(getpid());
+	write(1, "Server is running: ", 19);
+	write(1, pid, ft_strlen(pid));
+	write(1, "\n", 1);
+	free(pid);
+
 	signal(SIGUSR1, handle_signal);
 	signal(SIGUSR2, handle_signal);
 	data.str = NULL;
 	data.bits = 0;
 	data.byte = 0;
+	data.end = 0;
 	while (1)
 	{
 		if (data.end)
 		{
-			printf("%s\n", data.str);
+			write(1, data.str, ft_strlen(data.str));
+			write(1, "\n", 1);
 			data.end = 0;
+			free(data.str);
 			data.str = NULL;
 			data.bits = 0;
 			data.byte = 0;
